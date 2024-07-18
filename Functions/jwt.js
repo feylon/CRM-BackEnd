@@ -8,12 +8,12 @@ function sign(id) {
 async function token_check(req, res, next) {
   let token = req.header("-x-token");
   const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  let id;
+  // let id;
   try {
     
     let decoded = jwt.verify(token, process.env.tokenAdminCode);
     
-    id = eval(decoded.id);
+    // id = eval(decoded.id);
 
     
   } catch (err) {
